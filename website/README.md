@@ -10,4 +10,4 @@ Replace the seven named placeholder files in `assets/screenshots/` with real PNG
 
 ## Brand assets
 
-`assets/logo-black.png` and `assets/logo-white.png` are the supplied sun-arc marks with their flat backgrounds removed. The favicon files are derived from the black mark.
+`assets/logo-black.svg` and `assets/logo-white.svg` are vector versions of the supplied sun-arc marks. The SVG favicon set is derived from the black mark.
