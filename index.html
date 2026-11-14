@@ -1,158 +1,56 @@
 <!doctype html>
-<html lang="en" data-page="home" data-root="">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Daylight — a clean, fast web calendar</title>
-<meta name="description" content="Daylight is a clean, fast web calendar for your events and tasks. Free, no install, and your data stays yours.">
-<meta name="color-scheme" content="light dark">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css">
-<script>document.documentElement.classList.add('js')</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Daylight is a clean, fast web calendar for your events and tasks. Free.">
+  <title>Daylight — a clean, fast web calendar</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';</script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header id="site-nav"></header>
-<main>
-
-<section class="hero on-dark" data-section="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-grid"></div>
-  <img class="hero-mark" src="assets/logo-white.svg" alt="">
-  <div class="cursor-glow"></div>
-  <div class="wrap hero-inner">
-    <a class="pill-badge h-a" href="#ai">Now with AI access <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <h1 class="display" data-words>Your calendar, minus the clutter.</h1>
-    <p class="sub h-sub">Daylight is a clean, fast web calendar for your events and tasks. Free.</p>
-    <div class="hero-cta h-cta">
-      <a class="btn btn-light" href="https://joeynatale28-source.github.io/daylight/">Get started <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a class="btn btn-ghost" href="#features">See how it works</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="/" aria-label="Daylight home">
+        <img class="brand-mark brand-mark--light" src="assets/logo-black.svg" alt="">
+        <img class="brand-mark brand-mark--dark" src="assets/logo-white.svg" alt="">
+        <span>Daylight</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#features">Features</a><a href="#sharing">Sharing</a><a href="#ai">AI access</a><a href="#faq">FAQ</a>
+      </nav>
+      <a class="button button--nav" href="https://joeynatale28-source.github.io/daylight/">Open Daylight <span aria-hidden="true">→</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
     </div>
-    <p class="trust small h-trust">Free · No install · Your data stays yours</p>
-    <div class="hero-frame-wrap h-frame"><div class="parallax"><div class="hero-frame">
-      <figure class="frame frame--light" style="--ar:8/5"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame-url">joeynatale28-source.github.io/daylight</span></div><div class="frame-body"><span>Month view — screenshot goes here</span></div></figure>
-    </div></div></div>
-  </div>
-</section>
-
-<section class="sec sec-features on-dark" data-section="features">
-  <div class="wrap">
-    <span class="anchor" id="features"></span>
-    <div class="sec-head" data-reveal>
-      <p class="eyebrow">Features</p>
-      <h2 class="h2" style="margin-top:16px">Everything a calendar should do. Nothing it shouldn’t.</h2>
-      <p class="lede">Views, tasks, sharing, and AI access, in one fast web app.</p>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#features">Features</a><a href="#sharing">Sharing</a><a href="#ai">AI access</a><a href="#faq">FAQ</a>
+      <a class="button button--nav" href="https://joeynatale28-source.github.io/daylight/">Open Daylight <span aria-hidden="true">→</span></a>
     </div>
-    <div class="cards" data-stagger="80">
-      <article class="card" data-reveal>
-        <div class="card-vis"><figure class="frame frame--dark frame--mini" style="--ar:8/5"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame-url">joeynatale28-source.github.io/daylight</span></div><div class="frame-body"><span>Month view — screenshot goes here</span></div></figure></div>
-        <h3 class="h3">Your calendar, your way</h3>
-        <p>Switch between views to see your whole month at a glance or zoom in on a single day. Recurring events repeat on the schedule you set, so you only enter them once.</p>
-        <a class="more" href="#themes">Learn more ›</a>
-      </article>
-      <article class="card" data-reveal>
-        <div class="card-vis"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 19c.6-3.3 3.1-5 6.5-5s5.9 1.7 6.5 5"/><path d="M16 5.2a3.4 3.4 0 0 1 0 6.6M18 14.3c2 .5 3.2 2 3.5 4.7"/></svg></span></div>
-        <h3 class="h3">Plan together</h3>
-        <p>Keep tasks right next to your events so your day lives in one place. Share calendars or single events with other Daylight accounts, view-only or can-edit.</p>
-        <a class="more" href="#sharing">Learn more ›</a>
-      </article>
-      <article class="card" data-reveal>
-        <div class="card-vis"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg></span></div>
-        <h3 class="h3">Smart and private</h3>
-        <p>Connect ChatGPT or Claude with scoped, revocable permissions and a full activity log. Your data stays yours, and Daylight is free with no subscriptions.</p>
-        <a class="more" href="#ai">Learn more ›</a>
-      </article>
-    </div>
-  </div>
-</section>
+  </header>
 
-<section class="sec sec-sharing rule-top" data-section="sharing">
-  <div class="wrap">
-    <span class="anchor" id="sharing"></span>
-    <div class="split" data-reveal>
-      <h2 class="h2-split">Share a calendar, not a screenshot.</h2>
-      <div class="split-copy">
-        <p class="lede">Share a whole calendar or a single event with other Daylight accounts, or hand out a public link. You choose who can only view and who can edit.</p>
-        <a class="split-link" href="#sharing">1.0 Sharing →</a>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div><div class="hero-glow" aria-hidden="true"></div><div class="cursor-glow" aria-hidden="true"></div>
+      <div class="hero-mark" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <a class="eyebrow-pill hero-enter" href="#ai">Now with AI access <span aria-hidden="true">→</span></a>
+        <h1 class="hero-title"><span>Your</span> <span>calendar,</span> <span>minus the clutter.</span></h1>
+        <p class="hero-sub hero-enter">Daylight is a clean, fast web calendar for your events and tasks. Free.</p>
+        <div class="hero-actions hero-enter"><a class="button button--light" href="https://joeynatale28-source.github.io/daylight/">Get started <span aria-hidden="true">→</span></a><a class="button button--ghost" href="#features">See how it works</a></div>
+        <p class="trust hero-enter">Free <span>·</span> No install <span>·</span> Your data stays yours</p>
+        <div class="frame-wrap hero-enter"><div class="browser-frame" aria-label="Product placeholder">
+          <div class="browser-bar"><span class="window-dots"><i></i><i></i><i></i></span><span class="browser-url">joeynatale28-source.github.io/daylight</span></div>
+          <div class="frame-body"><span>Month view — screenshot goes here</span></div>
+        </div></div>
       </div>
-    </div>
-    <div class="deep-frame" data-reveal="frame"><figure class="frame frame--theme" style="--ar:7/5"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame-url">joeynatale28-source.github.io/daylight</span></div><div class="frame-body"><span>Share dialog — screenshot goes here</span></div></figure></div>
-    <ol class="nl" data-stagger="60"><li data-reveal="sm"><span class="num">1.1</span><div><h3>Invite Daylight accounts</h3><p>Share a whole calendar or a single event with another Daylight account. They see it in their own Daylight, without a screenshot or an exported file.</p></div></li><li data-reveal="sm"><span class="num">1.2</span><div><h3>View-only or can-edit</h3><p>Decide whether each person can only look or can also make changes. You set the level when you share, so nobody gets more access than you meant to give.</p></div></li><li data-reveal="sm"><span class="num">1.3</span><div><h3>Public links</h3><p>Create a public link for people who don’t have a Daylight account. It’s a simple way to put a schedule in front of anyone.</p></div></li><li data-reveal="sm"><span class="num">1.4</span><div><h3>Your account stays yours</h3><p>Sharing a calendar shares that calendar, not everything else. Your other calendars and tasks aren’t part of what you hand over.</p></div></li></ol>
-    <div class="hairline" data-draw></div>
-  </div>
-</section>
-
-<section class="sec sec-ai on-dark" data-section="ai">
-  <div class="ai-glow"></div>
-  <div class="wrap">
-    <span class="anchor" id="ai"></span>
-    <div class="split split--rev" data-reveal>
-      <h2 class="h2-split">Let ChatGPT or Claude into your calendar. On your terms.</h2>
-      <div class="split-copy">
-        <p class="lede">Connect an AI assistant to Daylight with scoped, revocable permissions. Every action it takes lands in a full activity log you can read.</p>
-        <a class="split-link" href="#ai">2.0 AI access →</a>
-      </div>
-    </div>
-    <div class="deep-frame" data-reveal="frame"><figure class="frame frame--dark" style="--ar:7/5"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame-url">joeynatale28-source.github.io/daylight</span></div><div class="frame-body"><span>AI access — screenshot goes here</span></div></figure></div>
-    <ol class="nl" data-stagger="60"><li data-reveal="sm"><span class="num">2.1</span><div><h3>ChatGPT or Claude</h3><p>Connect ChatGPT or Claude to your Daylight calendar. Your assistant can then work with your events and tasks instead of guessing at them.</p></div></li><li data-reveal="sm"><span class="num">2.2</span><div><h3>Scoped permissions</h3><p>Decide what an assistant is allowed to do before it connects. Access stops at what you granted, and nothing more.</p></div></li><li data-reveal="sm"><span class="num">2.3</span><div><h3>Revoke any time</h3><p>Disconnect an assistant whenever you like from Settings. Once you revoke it, its access to your calendar ends.</p></div></li><li data-reveal="sm"><span class="num">2.4</span><div><h3>A full activity log</h3><p>Every action an assistant takes is recorded in an activity log. Open Settings, then AI access, to see exactly what it did and when.</p></div></li></ol>
-    <div class="hairline" data-draw></div>
-  </div>
-</section>
-
-<section class="sec" data-section="themes">
-  <div class="wrap">
-    <span class="anchor" id="themes"></span>
-    <div class="sec-head" data-reveal>
-      <p class="eyebrow">Themes</p>
-      <h2 class="h2" style="margin-top:16px">Easy on the eyes, day or night.</h2>
-      <p class="lede">Daylight comes in Light and Dark, and follows your system setting automatically.</p>
-    </div>
-    <div data-reveal>
-      <div class="seg-wrap"><div class="seg" role="radiogroup" aria-label="Compare themes">
-        <button role="radio" aria-checked="false" tabindex="0" data-t="light">Light</button>
-        <button role="radio" aria-checked="false" tabindex="-1" data-t="dark">Dark</button>
-      </div></div>
-      <div class="tgrid" data-focus="both">
-        <div class="tf" data-t="light"><figure class="frame frame--light" style="--ar:4/3"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame-url">joeynatale28-source.github.io/daylight</span></div><div class="frame-body"><span>Light theme — screenshot goes here</span></div></figure><div class="tcap"><strong>Light</strong><span>Crisp and bright for daytime.</span></div></div>
-        <div class="tf" data-t="dark"><figure class="frame frame--dark" style="--ar:4/3"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame-url">joeynatale28-source.github.io/daylight</span></div><div class="frame-body"><span>Dark theme — screenshot goes here</span></div></figure><div class="tcap"><strong>Dark</strong><span>Easy on the eyes after dark.</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec rule-top" data-section="faq">
-  <div class="wrap">
-    <span class="anchor" id="faq"></span>
-    <div class="sec-head" data-reveal>
-      <p class="eyebrow">FAQ</p>
-      <h2 class="h2" style="margin-top:16px">Questions, answered.</h2>
-    </div>
-    <div class="faq" data-reveal>
-      <div class="fq"><h3 style="font-size:inherit"><button aria-expanded="false" aria-controls="a0" id="q0">Is it free?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a0" role="region" aria-labelledby="q0"><div><p>Yes — Daylight is free, with no subscriptions and no in-app purchases.</p></div></div></div>
-      <div class="fq"><h3 style="font-size:inherit"><button aria-expanded="false" aria-controls="a1" id="q1">Do I need to install anything?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a1" role="region" aria-labelledby="q1"><div><p>No — it runs in your browser.</p></div></div></div>
-      <div class="fq"><h3 style="font-size:inherit"><button aria-expanded="false" aria-controls="a2" id="q2">Can I import my calendars?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a2" role="region" aria-labelledby="q2"><div><p>Yes — subscribe by iCal link or import an ICS file; a US Holidays calendar is built in.</p></div></div></div>
-      <div class="fq"><h3 style="font-size:inherit"><button aria-expanded="false" aria-controls="a3" id="q3">Can I share with people?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a3" role="region" aria-labelledby="q3"><div><p>Yes — share calendars or single events with other Daylight accounts (view-only or can-edit), or with a public link.</p></div></div></div>
-      <div class="fq"><h3 style="font-size:inherit"><button aria-expanded="false" aria-controls="a4" id="q4">Does it work with AI assistants?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a4" role="region" aria-labelledby="q4"><div><p>Yes — connect ChatGPT or Claude with scoped, revocable permissions and a full activity log.</p></div></div></div>
-      <div class="fq"><h3 style="font-size:inherit"><button aria-expanded="false" aria-controls="a5" id="q5">Who made it?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a5" role="region" aria-labelledby="q5"><div><p>An independent developer — designed and built by Joey.</p></div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec sec-cta on-dark" data-section="cta">
-  <div class="wrap">
-    <h2 data-reveal>Start your Daylight.</h2>
-    <p class="lede" data-reveal style="--d:80ms">Free, no install, and your data stays yours. Open Daylight and your first event is a minute away.</p>
-    <div class="cta-btns" data-reveal style="--d:160ms">
-      <a class="btn btn-light" href="https://joeynatale28-source.github.io/daylight/">Get started</a>
-      <a class="btn btn-grey" href="#features">See how it works</a>
-    </div>
-    <div class="watermark" aria-hidden="true" data-reveal="mark">Daylight</div>
-  </div>
-</section>
-
-</main>
-<footer id="site-footer"></footer>
-<script src="script.js"></script>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
