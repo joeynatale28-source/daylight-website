@@ -1,67 +1,53 @@
-# Daylight website design system (v3)
+# Daylight website design system (v4, full rebuild)
 
-Direction: calm, precise, strictly black and white. Pacing and type discipline from Cron (huge tight headline, app frame overlapping a dark hero), Vercel (hairlines, tiny uppercase labels, medium-weight grotesque) and Linear (dark glass hero, arrowed CTA, footer as its own slab). The skin is Daylight's own. All tokens live as CSS variables at the top of `styles.css`; pages use names, never raw values.
+Goal: a page that makes a design-literate Apple or Google Calendar user think "this was made by a team that cares." Strictly black and white. Every section replicates one named reference (layout, spacing, type proportions) with Daylight's content. All tokens are CSS variables at the top of `styles.css`; pages use names, never raw values.
 
-## Color
-| Token | Value | Role |
+| Section | Primary reference | Copied |
 |---|---|---|
-| `--bg` | #fff | light sections, footer |
-| `--bg-alt` | #f5f5f5 | alternate light bands, chips, glance box |
-| `--ink` | #0a0a0a | headings, primary buttons on light |
-| `--ink-2` | #444 | body text on light (AA) |
-| `--ink-3` | #6b6b6b | labels, captions, muted spans (AA) |
-| `--line` / `--line-2` | #e5e5e5 / #d0d0d0 | hairlines / stronger borders |
-| `--dk` | #0a0a0a | dark sections (hero, AI access, final CTA) |
-| `--dk-ink` / `-2` / `-3` | #fafafa / #b3b3b3 / #8f8f8f | text on dark |
-| `--dk-line` / `-2` | rgba(255,255,255,.1/.2) | hairlines on dark |
-| `--accent` / `--accent-dk` | #1a73e8 / #8ab4f8 | the app's own link and focus accent only (focus rings, link underlines) |
+| Nav | Linear + VoiceOS | quiet bar with hairline, divider, Log in, one pill CTA; condenses into a floating frosted pill on scroll |
+| Hero | Cron Calendar | centered pill, huge tight headline, one-line subcopy, two CTAs, product frame overlapping the section edge |
+| Features | Supabase | one row of six plain-text columns, icon tile + title inline, grey copy, small "Learn more ›" link |
+| Sharing / AI access | Linear deep-dive | split header (headline / explanatory copy), full-width framed visual, numbered 2-column sub-feature list; AI mirrored on dark glass |
+| Themes | Cron Calendar | desktop frame with a second frame overlapping its bottom-right corner on a dark panel that fades to black |
+| FAQ | Monologue | clean hairline rows, circular +/× buttons |
+| Final CTA | Linear | huge centered headline, two pills without arrows, very airy |
+| Footer | Resend | black, hairline above, logo + short link columns, one-line credit |
+| Legal shells | Resend | hairline panels, readable column, left-rail table of contents |
 
-No other color. Depth comes from weight, size, spacing, hairlines, soft white glows and glass on dark.
-
-## System themes (light + dark)
-Every page follows the visitor's OS theme through `prefers-color-scheme` in CSS only: no script, so no flash of the wrong theme, and it flips live when the OS flips. `color-scheme: light dark` and per-scheme `theme-color` metas are set on every page. The hero, AI access and final CTA stay dark in both themes.
+## Themes (system, CSS only)
+Every page follows the OS theme through `prefers-color-scheme`: no script, no flash, live switching. Dark sections (hero, AI access, final CTA, footer) re-scope the same tokens, so components inside adapt automatically.
 
 | Token | Light | Dark |
 |---|---|---|
-| `--bg` | #fff | #0b0b0b |
-| `--bg-alt` | #f5f5f5 | #111 |
-| `--card` | #fff | #141414 |
-| `--ink` / `-2` / `-3` | #0a0a0a / #444 / #6b6b6b | #fafafa / #b3b3b3 / #8f8f8f |
-| `--line` / `--line-2` | #e5e5e5 / #d0d0d0 | rgba(255,255,255,.09) / .18 |
-| `--accent` | #1a73e8 | #8ab4f8 |
-| `--on-ink` | #fff | #0a0a0a (text on inked surfaces: icon tiles, check marks) |
-| `--btn-bg` / `--btn-fg` / `--btn-hover` | #0a0a0a / #fff / #262626 | #fff / #0a0a0a / #e6e6e6 |
-| `--dk` (dark sections) | #0a0a0a | #050505 |
-| `--sh1` / `--sh2` | soft drop shadows | hairline inset + deep shadow |
+| `--bg` | #FFFFFF | #0A0A0A |
+| `--surface` | #F5F5F5 | #141414 |
+| `--raised` | #FFFFFF | #1A1A1A |
+| `--line` | rgba(0,0,0,.08) | rgba(255,255,255,.08) |
+| `--line-2` | rgba(0,0,0,.16) | rgba(255,255,255,.16) |
+| `--text` | #111111 | #FFFFFF |
+| `--text-2` | #555555 | #A1A1A1 |
+| `--muted` | #888888 | #666666 (numerals and non-essential labels only; below AA for body text) |
+| `--p-bg` / `--p-fg` | #111 / #FFF | #FFF / #0A0A0A (primary pill) |
+| `--accent` | #1A73E8 | #8AB4F8 (focus rings only; links are text color with an underline) |
 
-Dark theme details: cards are dark grey with hairline borders (Linear style), glows on the AI and CTA sections are stronger, the nav goes dark glass over every section, and the logo swaps (white mark on dark, black on light) in the nav and footer on every page. Product placeholder frames keep their own pinned light/dark values in both themes.
+Dark sections in both themes: #0A0A0A, white text, rgba(255,255,255,.08) hairlines, white radial glows at low opacity. Footer #000000. No other colors; icons are monochrome (`currentColor`).
 
-## Typography
-Inter only (400, 500, 600, 700, 800), loaded from Google Fonts with a system fallback stack.
-- `.display` hero: clamp(42px, 9.2vw, 104px), 800, -0.045em, line-height 1.0
-- `.display-2` final CTA: clamp(40px, 7vw, 88px), 800
-- `.h2` deep-dive headings: clamp(32px, 4.6vw, 56px), 700; `.h2-s` section titles: clamp(30px, 4vw, 46px), 600
-- Mixed weight: first clause in ink at full weight, second clause in `--ink-3` / `--dk-ink-3` (hero uses grey "minus the" and a marker highlight on "clutter.")
-- `h3`: 19px / 600. `.lede`: clamp(17px, 1.7vw, 20px), 1.6. Body 17px / 1.65.
-- `.eyebrow`: 12px, 600, uppercase, .14em tracking, with a small square marker.
+## Type (Inter 400–800, Google Fonts with a system fallback)
+- Display: clamp(48px, 7vw, 80px) / 1.05 / -0.03em / 700
+- H2: clamp(32px, 4vw, 48px) / 1.1 / -0.02em / 700. Deep-dive headline (`.h2-lg`) clamp(36px, 4.6vw, 56px). CTA headline clamp(44px, 6vw, 72px).
+- H3 20px / 600. Eyebrow 13px / 600 / .12em uppercase. Body 17px / 1.6. Small 15px / 1.5. Buttons 15px / 600.
 
-## Spacing (8px base)
-`--s1` 8, `--s2` 16, `--s3` 24, `--s4` 32, `--s5` 40, `--s6` 48, `--s8` 64, `--s10` 80, `--s12` 96. Section padding `--sec` = clamp(72px, 9vw, 120px), equal top and bottom everywhere. Content width 1120px, gutter 24px (20px on phones). Stack rhythm: eyebrow 16 → heading 24 → lede.
-
-## Shape and depth
-Radius: `--r1` 8, `--r2` 12, `--r3` 20, `--pill` 999. Shadow: `--sh1` (cards at rest), `--sh2` (hover and framed visuals), `--shadow-frame` (hero product frame). Nothing larger.
-
-## Motion
-Timing `--t1` 160ms, `--t2` 220ms, `--t3` 260ms. Entrances ease-out `cubic-bezier(.23,1,.32,1)`, exits ease-in `cubic-bezier(.4,0,1,1)`. Hero fades and rises in sequence (190ms each, 80ms stagger); sections fade and rise once on scroll; buttons and cards lift on hover; the FAQ animates open and closed. `prefers-reduced-motion` turns all movement off.
+## Spacing, shape, depth
+8px base. Section padding 120px desktop, 80px tablet (≤1024), 64px phone (≤768), equal top and bottom. Container 1120px (features row 1280px), side padding 24px, 16px at ≤480. Eyebrow → H2 16px; H2 → subcopy 16–24px; subcopy → content 48–80px. Radius: cards 16px, frames 12px, pills 999px. Shadows: card `0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06)`, frame `0 24px 64px rgba(0,0,0,.18)`.
 
 ## Components
-- Nav: fixed, backdrop blur plus hairline, shadow after scroll, switches dark/light with the section beneath it (`data-nav` on sections). Hamburger below 768px opens a full overlay menu.
-- Buttons: one primary pill with arrow everywhere (white on dark, black on light), `btn-sm` in the nav; `btn-secondary` glass pill on dark.
-- Cards: hairline border, `--r3`, black icon tile, chips row pinned to the bottom so every card is the same height.
-- Deep-dives: two equal columns, eyebrow, mixed-weight heading, paragraph, check list. AI access uses dark glass.
-- FAQ: native `details`, animated, plus rotates to × when open.
-- Final CTA on dark, then a light footer (clear break).
-- Legal pages: `.legal-hero`, sticky left-rail table of contents (collapsible on phones), 720px single column, numbered sections, `.glance` box (Privacy only), `.todo` placeholder lines, print stylesheet.
+- One button component (`.btn`, 48px, pill): primary (white on dark, black on light), ghost (hairline), dim (#222). Primary carries an arrow except in the final CTA.
+- Nav: fixed, 64px bar with hairline; past 8px of scroll it floats as a frosted glass pill (blur 12px, saturate 180%). Tone (dark/light) follows the section beneath. Below 768px a hamburger opens a dropdown panel.
+- Feature columns, split headers, numbered sub-feature lists, framed product visuals, dark glass panel, themes stage, FAQ (one open at a time, height + opacity 190ms), footer.
+- Legal pages: `.legal-hero`, sticky table of contents (collapses on phones), 720px column, numbered sections, `.glance` box (Privacy), `.todo` placeholders, print stylesheet.
+
+## Motion
+160–260ms, `cubic-bezier(.16,1,.3,1)` for entrances, ease-out for hovers, transform and opacity only (FAQ height excepted). Hero fades and rises in sequence (80ms stagger, 12px). Sections reveal once at 15% visible. `prefers-reduced-motion` removes all movement.
 
 ## Imagery
-Product visuals are real captures only. Until they exist, each shows a labeled placeholder at the exact aspect ratio (`.frame`, `.shot`, `.ph`); never drawn UI. Drop `hero.png`, `sharing.png`, `ai.png`, `theme-light.png`, `theme-dark.png` into `assets/screenshots/` and they appear automatically. Logo: white mark on dark, black mark on light.
+Product visuals are real captures only. Until they exist, each is a labeled placeholder at the exact aspect ratio inside a browser-chrome frame (`.frame`, `.shot`, `.ph`); never drawn UI. Drop `hero.png`, `sharing.png`, `ai.png`, `theme-light.png`, `theme-dark.png` into `assets/screenshots/` and they appear. No social proof of any kind until it exists.
