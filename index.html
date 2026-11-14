@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
 <title>Daylight — Your calendar, minus the clutter</title>
 <meta name="description" content="Daylight is a clean, fast web calendar for events and tasks. Month, Week, Day and Agenda views, sharing, reminders, and AI access. Free.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,17 +38,16 @@
 
 <main id="main">
 
-  <section class="hero dark-sec" data-tone="dark">
+  <section class="hero" data-tone="light">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="wrap">
-      <a class="pill hero-in" href="#ai">Now with AI access <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <h1 class="display hero-in"><span>Your calendar,</span> <span class="two">minus the clutter.</span></h1>
+      <p class="badge hero-in"><img class="logo-b" src="assets/logo-black.svg" alt="" width="18" height="18"><img class="logo-w" src="assets/logo-white.svg" alt="" width="18" height="18">Free · No install</p>
+      <h1 class="display hero-in">Your calendar, minus the clutter.</h1>
       <p class="lede hero-in">Daylight is a clean, fast web calendar for your events and tasks. Free.</p>
       <div class="cta-row hero-in">
-        <a class="btn btn-primary" data-app>Get started <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a class="btn btn-ghost" href="#features">See how it works</a>
+        <a class="btn btn-primary btn-lg" data-app>Get started <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <p class="trust hero-in">Free<i>·</i>No install<i>·</i>Your data stays yours</p>
+      <p class="micro hero-in">Free<i>·</i>No install<i>·</i>Your data stays yours</p>
     </div>
     <div class="hero-shot hero-in">
       <div class="shotframe"><div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
@@ -56,48 +56,78 @@
     </div>
   </section>
 
-  <section id="features" class="features dark-sec" data-tone="dark">
+  <section id="features" data-tone="light">
     <div class="wrap">
       <div class="sec-head rise">
         <p class="eyebrow">Features</p>
         <h2 class="h2">Everything a calendar should do. Nothing it shouldn't.</h2>
         <p class="lede">Month, Week, Day and Agenda views, tasks, sharing and more, all in one clean web calendar.</p>
       </div>
-      <div class="gcards">
-        <article class="gcard rise">
-          <div class="gviz" aria-hidden="true"><span class="chip on">Month</span><span class="chip">Week</span><span class="chip">Day</span><span class="chip">Agenda</span><span class="chip">Recurring</span></div>
-          <h3>Your calendar, your way</h3>
+      <div class="feat-visual rise">
+        <div class="shotframe"><div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
+          <div class="crop"><img src="assets/screenshots/hero.png" alt="Daylight Month view with calendars and events" width="1600" height="1000"></div>
+        </div><span class="cap-pill">Month view · Light theme</span></div>
+      </div>
+      <div class="fgrid">
+        <article class="fcol rise">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="5.5" width="20" height="18" rx="3"/><path d="M9 3.5v4M19 3.5v4M4 11.5h20"/></svg>
+          <h3>Views that fit your brain</h3>
           <p>Switch between Month, Week, Day and Agenda views to see your time at the scale you need. Recurring events repeat on their own, so you only set them up once.</p>
+          <a class="more" data-app>Try it ›</a>
+        </article>
+        <article class="fcol rise">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="4.5" y="4.5" width="19" height="19" rx="4"/><path d="m9.5 14.5 3 3 6-7"/></svg>
+          <h3>Tasks built in</h3>
+          <p>Daylight includes a built-in Tasks list right beside your calendar, so to-dos and events live in one place. Check things off without leaving the app.</p>
+          <a class="more" data-app>Try it ›</a>
+        </article>
+        <article class="fcol rise">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="10.5" cy="10.5" r="3.5"/><circle cx="19" cy="11.5" r="2.8"/><path d="M3.5 22c.5-3.6 3.2-5.6 7-5.6s6.5 2 7 5.6M18 17c2.8-.2 5 1.4 5.5 5"/></svg>
+          <h3>Sharing without the mess</h3>
+          <p>Share calendars or single events with other Daylight accounts as view-only or can-edit. You can also publish a public calendar link and revoke it anytime.</p>
           <a class="more" href="#sharing">Learn more ›</a>
         </article>
-        <article class="gcard rise">
-          <div class="gviz" aria-hidden="true"><span class="chip on">Tasks</span><span class="chip">View-only</span><span class="chip">Can edit</span><span class="chip">Public link</span></div>
-          <h3>Plan together</h3>
-          <p>Keep tasks right beside your events, and share calendars or single events with other Daylight accounts as view-only or can-edit. You can also publish a public calendar link.</p>
-          <a class="more" href="#sharing">Learn more ›</a>
+        <article class="fcol rise">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M11.5 16.5a4 4 0 0 0 5.700 0l3.500-3.500a4 4 0 0 0-5.700-5.700l-1 1M16.500 11.500a4 4 0 0 0-5.700 0L7.300 15a4 4 0 0 0 5.700 5.700l1-1"/></svg>
+          <h3>Subscriptions</h3>
+          <p>Subscribe to calendars by iCal link or import an ICS file. A US Holidays calendar is already built in, so key dates are there from day one.</p>
+          <a class="more" href="#faq">Learn more ›</a>
         </article>
-        <article class="gcard rise">
-          <div class="gviz" aria-hidden="true"><span class="chip on">ChatGPT</span><span class="chip">Claude</span><span class="chip">Scoped</span><span class="chip">Revocable</span><span class="chip">Activity log</span></div>
-          <h3>Smart and private</h3>
-          <p>Connect ChatGPT or Claude with scoped, revocable permissions and a full activity log. Your data stays yours: no ads, no selling it, and no AI training on your content.</p>
+        <article class="fcol rise">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 4a6.500 6.500 0 0 0-6.500 6.500c0 5-2.500 7-2.500 7h18s-2.500-2-2.500-7A6.500 6.500 0 0 0 14 4zM11.500 21.500a2.700 2.700 0 0 0 5 0"/></svg>
+          <h3>Notifications that behave</h3>
+          <p>Add reminders to your events and get notifications when it's time. They show up when you need them and stay out of the way otherwise.</p>
+          <a class="more" data-app>Try it ›</a>
+        </article>
+        <article class="fcol rise">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.500 22.500 7v6c0 5.500-3.600 9-8.500 11-4.900-2-8.500-5.500-8.500-11V7z"/><path d="m10.500 14 2.500 2.500 4.500-5"/></svg>
+          <h3>Your data, yours</h3>
+          <p>No ads, no selling your data, and no AI training on your content. Your calendar stays yours.</p>
           <a class="more" href="privacy/">Learn more ›</a>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="sharing" class="s-surface" data-tone="light">
+  <section id="sharing" class="round-top frost" data-tone="light">
     <div class="wrap">
       <div class="split rise">
-        <div><span class="deep-num">Sharing</span><h2 class="h2-lg">Share a calendar, not a screenshot.</h2></div>
+        <div class="share-card" aria-hidden="true">
+          <span class="apill"><svg viewBox="0 0 20 20"><circle cx="10" cy="7" r="3.200"/><path d="M4 16.500c.6-3 3-4.500 6-4.500s5.400 1.500 6 4.500"/></svg>Invite by name — can edit</span>
+          <span class="apill"><svg viewBox="0 0 20 20"><path d="M2.500 10s2.800-5 7.500-5 7.500 5 7.500 5-2.800 5-7.500 5S2.500 10 2.500 10z"/><circle cx="10" cy="10" r="2.200"/></svg>Invite by name — view only</span>
+          <span class="apill"><svg viewBox="0 0 20 20"><path d="M8.500 11.500a3 3 0 0 0 4.200 0l2.300-2.300a3 3 0 0 0-4.200-4.200l-.8.8M11.500 8.500a3 3 0 0 0-4.200 0L5 10.800a3 3 0 0 0 4.200 4.200l.8-.8"/></svg>Public link — anyone with the link</span>
+          <span class="apill"><svg viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"/></svg>Revoke access anytime</span>
+        </div>
         <div class="split-copy">
+          <span class="deep-num">Sharing</span>
+          <h2 class="h2-lg">Share a calendar, not a screenshot.</h2>
           <p>Invite people by name and choose whether they can view or edit. Share a whole calendar or a single event with other Daylight accounts, or publish a public link. Change your mind whenever you like.</p>
           <a class="tlink" href="#share-list">1.0 Sharing →</a>
         </div>
       </div>
       <div class="deep-visual rise">
         <div class="shotframe"><div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
-          <img src="assets/screenshots/sharing.png" alt="Daylight's share dialog with people listed as view-only or can-edit" width="1400" height="1000" loading="lazy">
+          <img src="assets/screenshots/sharing.png" alt="Daylight's share dialog with people listed as view-only or can-edit" width="1400" height="1000">
         </div></div>
       </div>
       <ol class="sublist rise" id="share-list">
@@ -109,18 +139,21 @@
     </div>
   </section>
 
-  <section id="ai" class="dark-sec glass" data-tone="dark">
+  <section id="ai" class="round-top dark-sec glass" data-tone="dark">
     <div class="wrap">
       <div class="split flip rise">
-        <div><span class="deep-num">AI access</span><h2 class="h2-lg">Let ChatGPT or Claude into your calendar. On your terms.</h2></div>
         <div class="split-copy">
           <p>Connect an assistant to your calendar with scoped permissions that you control. Every connection can be revoked in one click, and a full activity log shows what each assistant has done.</p>
           <a class="tlink" href="#ai-list">2.0 AI access →</a>
         </div>
+        <div>
+          <span class="deep-num">AI access</span>
+          <h2 class="h2-lg">Let ChatGPT or Claude into your calendar. On your terms.</h2>
+        </div>
       </div>
       <div class="deep-visual glow-frame rise">
-        <div class="shotframe"><div class="frame on-dark"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
-          <img src="assets/screenshots/ai.png" alt="Daylight Settings, AI access, with connected assistants and the activity log" width="1400" height="1000" loading="lazy">
+        <div class="shotframe"><div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
+          <img src="assets/screenshots/ai.png" alt="Daylight Settings, AI access, with connected assistants and the activity log" width="1400" height="1000">
         </div></div>
       </div>
       <ol class="sublist rise" id="ai-list">
@@ -132,7 +165,7 @@
     </div>
   </section>
 
-  <section id="themes" data-tone="light">
+  <section id="themes" class="round-top frost" data-tone="light">
     <div class="wrap">
       <div class="sec-head rise">
         <p class="eyebrow">Themes</p>
@@ -142,13 +175,13 @@
       <div class="themes-grid rise">
         <figure>
           <div class="shotframe"><div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
-            <img src="assets/screenshots/theme-light.png" alt="Daylight in the light theme" width="1200" height="900" loading="lazy">
+            <img src="assets/screenshots/theme-light.png" alt="Daylight in the light theme" width="1200" height="900">
           </div></div>
           <figcaption><b>Light</b><span>Crisp and bright for daytime.</span></figcaption>
         </figure>
         <figure>
           <div class="shotframe"><div class="frame on-dark"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
-            <img src="assets/screenshots/theme-dark.png" alt="Daylight in the dark theme" width="1200" height="900" loading="lazy">
+            <img src="assets/screenshots/theme-dark.png" alt="Daylight in the dark theme" width="1200" height="900">
           </div></div>
           <figcaption><b>Dark</b><span>Easy on the eyes after dark.</span></figcaption>
         </figure>
@@ -156,7 +189,7 @@
     </div>
   </section>
 
-  <section id="faq" class="s-surface" data-tone="light">
+  <section id="faq" class="round-top plain" data-tone="light">
     <div class="wrap">
       <div class="sec-head rise">
         <p class="eyebrow">FAQ</p>
@@ -173,20 +206,22 @@
     </div>
   </section>
 
-  <section class="cta dark-sec" data-tone="dark">
-    <div class="wrap rise">
-      <h2 class="h2-cta">Start your Daylight.</h2>
-      <p class="lede">Free, no install, and your data stays yours. Open Daylight and your first event is a minute away.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" data-app>Get started</a>
-        <a class="btn btn-dim" href="#features">See how it works</a>
+  <section class="cta round-top dark-sec" data-tone="dark">
+    <div class="wrap">
+      <div class="rise">
+        <h2 class="h2-cta">Start your Daylight.</h2>
+        <p class="lede">Free, no install, and your data stays yours. Open Daylight and your first event is a minute away.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-app>Get started</a>
+          <a class="btn btn-dim" href="#features">See how it works</a>
+        </div>
       </div>
+      <div class="watermark" aria-hidden="true">Daylight</div>
     </div>
   </section>
 </main>
-<footer class="footer" data-tone="dark">
+<footer class="footer dark-sec" data-tone="dark">
   <div class="wrap">
-    <div class="f-mark" aria-hidden="true">Daylight</div>
     <div class="f-top">
       <div class="f-brand">
         <a class="brand" href="./" aria-label="Daylight home"><img src="assets/logo-white.svg" alt="" width="36" height="36"><span>Daylight</span></a>
