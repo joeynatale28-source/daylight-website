@@ -379,3 +379,4 @@ section + section:not(.dark-sec):not(.s-surface):not(.after-hero){border-top:1px
   .stage .over .shot{height:clamp(100px,30vw,150px)}
   .stage .over .ph{inset:6px;padding:6px;gap:2px}
 }
+.cols{grid-auto-rows:1fr}
