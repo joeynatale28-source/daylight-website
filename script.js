@@ -18,8 +18,6 @@
     const p = new Image();
     p.onload = () => {
       f.classList.add('has-img');
-      if (f.closest('.hero-shot')) root.classList.add('has-hero');
-      if (f.closest('#themes')) root.classList.add('has-themes');
     };
     p.src = img.getAttribute('src');
   });
