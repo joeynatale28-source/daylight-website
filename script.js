@@ -2,12 +2,27 @@
   // The one place the app URL lives. Swap for the custom-domain app URL later.
   const APP_URL = 'https://joeynatale28-source.github.io/daylight/';
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.documentElement.classList.remove('no-js');
+  const root = document.documentElement;
+  root.classList.remove('no-js');
 
   document.querySelectorAll('[data-app]').forEach(a => { a.href = APP_URL; });
-  document.querySelectorAll('[data-url]').forEach(u => { u.textContent = APP_URL.replace(/^https?:\/\//, '').replace(/\/$/, ''); });
+  const host = APP_URL.replace(/^https?:\/\//, '').replace(/\/$/, '');
+  document.querySelectorAll('[data-url]').forEach(u => { u.textContent = host; });
   const yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- product frames: a frame only appears once its real screenshot has loaded ---- */
+  document.querySelectorAll('.shotframe').forEach(f => {
+    const img = f.querySelector('img');
+    if (!img) return;
+    const p = new Image();
+    p.onload = () => {
+      f.classList.add('has-img');
+      if (f.closest('.hero-shot')) root.classList.add('has-hero');
+      if (f.closest('#themes')) root.classList.add('has-themes');
+    };
+    p.src = img.getAttribute('src');
+  });
 
   /* ---- nav: mobile menu ---- */
   const nav = document.getElementById('nav'), btn = nav && nav.querySelector('.menu-btn');
@@ -24,21 +39,20 @@
     matchMedia('(min-width: 769px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
   }
 
-  /* ---- nav: floating pill on scroll, tone follows the section beneath ---- */
+  /* ---- nav: floating pill on scroll, tone follows the section beneath, active link ---- */
   if (nav) {
     const toned = [...document.querySelectorAll('main [data-tone], footer[data-tone]')];
     const links = [...nav.querySelectorAll('.nav-links a[href^="#"]')];
     const spy = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const hasMain = !!document.querySelector('main [data-tone]');
     let queued = false;
     const update = () => {
       queued = false;
       nav.classList.toggle('scrolled', scrollY > 8);
-      if (toned.length) {
-        const y = nav.querySelector('.nav-bar').getBoundingClientRect().bottom - 32;
-        let tone = document.querySelector('main [data-tone]') ? 'dark' : 'light';
-        for (const s of toned) { const r = s.getBoundingClientRect(); if (r.top <= y && r.bottom > y) { tone = s.dataset.tone; break; } }
-        nav.dataset.tone = tone;
-      } else nav.dataset.tone = 'light';
+      const y = nav.querySelector('.nav-bar').getBoundingClientRect().bottom - 32;
+      let tone = hasMain ? 'dark' : 'light';
+      for (const s of toned) { const r = s.getBoundingClientRect(); if (r.top <= y && r.bottom > y) { tone = s.dataset.tone; break; } }
+      nav.dataset.tone = tone;
       const mid = innerHeight * 0.4;
       links.forEach((a, i) => { const r = spy[i] && spy[i].getBoundingClientRect(); a.classList.toggle('active', !!r && r.top <= mid && r.bottom > mid); });
     };
@@ -47,15 +61,6 @@
     addEventListener('resize', q);
     update();
   }
-
-  /* ---- screenshots: reveal real image once loaded, else keep placeholder ---- */
-  document.querySelectorAll('.shot').forEach(s => {
-    const i = s.querySelector('img');
-    if (!i) return;
-    const ok = () => { if (i.naturalWidth > 0) s.classList.add('has-img'); };
-    i.addEventListener('load', ok);
-    if (i.complete) ok();
-  });
 
   /* ---- scroll reveals: once, at 15% visible ---- */
   const rises = document.querySelectorAll('.rise');
@@ -66,7 +71,7 @@
     rises.forEach(e => io.observe(e));
   } else rises.forEach(e => e.classList.add('in'));
 
-  /* ---- FAQ: one open at a time, buttons with aria-expanded ---- */
+  /* ---- FAQ: one open at a time ---- */
   const items = [...document.querySelectorAll('.faq-item')];
   items.forEach(it => {
     const q = it.querySelector('.faq-q');
@@ -88,7 +93,7 @@
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver(es => es.forEach(e => {
         if (e.isIntersecting) tl.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
-      }), { rootMargin: '-96px 0px -70% 0px' });
+      }), { rootMargin: '-120px 0px -70% 0px' });
       targets.forEach(t => io.observe(t));
     }
   }
