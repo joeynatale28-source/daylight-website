@@ -2,7 +2,7 @@
 
 A static, responsive marketing website for daylight. No build step or framework is required.
 
-Open `index.html` directly or serve the `website/` directory with any static web server.
+Open `index.html` or serve this folder with any static server. The site lives at the repo root so GitHub Pages (main / root) publishes it directly.
 
 ## Screenshot assets
 
