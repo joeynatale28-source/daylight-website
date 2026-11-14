@@ -5,6 +5,7 @@
   document.documentElement.classList.remove('no-js');
 
   document.querySelectorAll('[data-app]').forEach(a => { a.href = APP_URL; });
+  document.querySelectorAll('[data-url]').forEach(u => { u.textContent = APP_URL.replace(/^https?:\/\//, '').replace(/\/$/, ''); });
   const yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 

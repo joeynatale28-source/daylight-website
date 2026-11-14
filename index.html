@@ -41,7 +41,7 @@
 <main id="main">
 
   <section class="hero dark-sec" data-tone="dark">
-    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-bg" aria-hidden="true"><div class="sun"></div></div>
     <div class="wrap">
       <a class="pill hero-in" href="#ai">Now with AI access <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <h1 class="display hero-in"><span>Your calendar,</span> <span class="two">minus the <span class="mark">clutter.</span></span></h1>
@@ -53,7 +53,7 @@
       <p class="trust hero-in">Free<i>·</i>No install<i>·</i>Your data stays yours</p>
     </div>
     <div class="hero-shot hero-in" style="animation-delay:400ms">
-      <div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
         <div class="shot" style="--ar:16/10">
           <img src="assets/screenshots/hero.png" alt="Daylight Month view in the light theme, showing a full month of events" width="1600" height="1000">
           <div class="ph"><b>Screenshot placeholder</b>Month view, light theme · 1600 × 1000</div>
@@ -64,15 +64,18 @@
 
   <section id="features" class="after-hero" data-tone="light">
     <div class="wrap wrap-wide">
+      <p class="eyebrow feat-eyebrow rise">Features</p>
       <h2 class="feat-title rise"><b>Everything a calendar should do.</b> <span>Nothing it shouldn't.</span></h2>
       <div class="cols">
         <article class="col rise">
           <div class="head"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.500" y="5" width="17" height="15.500" rx="2.500"/><path d="M8 3v4M16 3v4M3.500 10h17"/></svg></span><h3>Views that fit your brain</h3></div>
           <p>Month, Week, Day and Agenda, with recurring events.</p>
+          <a class="more" data-app>Learn more ›</a>
         </article>
         <article class="col rise">
           <div class="head"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3.500"/><path d="m8.500 12.500 2.500 2.500 4.500-5.500"/></svg></span><h3>Tasks built in</h3></div>
           <p>Keep to-dos right next to the days they belong to.</p>
+          <a class="more" data-app>Learn more ›</a>
         </article>
         <article class="col rise">
           <div class="head"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3.200"/><circle cx="17" cy="10" r="2.500"/><path d="M3 19c.5-3.200 2.800-5 6-5s5.500 1.800 6 5M16 14.500c2.500-.2 4.500 1.200 5 4.500"/></svg></span><h3>Sharing without the mess</h3></div>
@@ -87,6 +90,7 @@
         <article class="col rise">
           <div class="head"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a5.500 5.500 0 0 0-5.500 5.500c0 4.500-2 6-2 6h15s-2-1.500-2-6A5.500 5.500 0 0 0 12 4zM10 19a2.200 2.200 0 0 0 4 0"/></svg></span><h3>Notifications that behave</h3></div>
           <p>Reminders and notifications that show up when you need them.</p>
+          <a class="more" href="#faq">Learn more ›</a>
         </article>
         <article class="col rise">
           <div class="head"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.500 19 6.500v5c0 4.500-3 7.500-7 9-4-1.500-7-4.500-7-9v-5z"/><path d="m9 12 2.200 2.200L15.500 10"/></svg></span><h3>Your data, yours</h3></div>
@@ -107,7 +111,7 @@
         </div>
       </div>
       <div class="deep-visual rise">
-        <div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
           <div class="shot" style="--ar:7/5">
             <img src="assets/screenshots/sharing.png" alt="Daylight's share dialog with people listed as view-only or can-edit" width="1400" height="1000" loading="lazy">
             <div class="ph"><b>Screenshot placeholder</b>Share dialog · 1400 × 1000</div>
@@ -115,10 +119,10 @@
         </div>
       </div>
       <ol class="sublist rise" id="share-list">
-        <li><span class="n">1.1</span><b>Invite by name</b><span>Share a calendar or a single event with other Daylight accounts.</span></li>
-        <li><span class="n">1.2</span><b>View-only or can-edit</b><span>Choose what each person is allowed to do.</span></li>
-        <li><span class="n">1.3</span><b>Revoke anytime</b><span>Take access back whenever you like.</span></li>
-        <li><span class="n">1.4</span><b>Public links</b><span>Publish a link for anyone, and revoke it anytime.</span></li>
+        <li><span class="n">1.1</span><div class="t"><b>Invite by name</b><p>Share a calendar or a single event with other Daylight accounts.</p></div></li>
+        <li><span class="n">1.2</span><div class="t"><b>View-only or can-edit</b><p>Choose what each person is allowed to do.</p></div></li>
+        <li><span class="n">1.3</span><div class="t"><b>Revoke anytime</b><p>Take access back whenever you like.</p></div></li>
+        <li><span class="n">1.4</span><div class="t"><b>Public links</b><p>Publish a link for anyone, and revoke it anytime.</p></div></li>
       </ol>
     </div>
   </section>
@@ -134,7 +138,7 @@
       </div>
       <div class="deep-visual rise">
         <div class="panel">
-          <div class="frame on-dark"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="frame on-dark"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
             <div class="shot" style="--ar:7/5">
               <img src="assets/screenshots/ai.png" alt="Daylight Settings, AI access, with connected assistants and the activity log" width="1400" height="1000" loading="lazy">
               <div class="ph"><b>Screenshot placeholder</b>Settings → AI access · 1400 × 1000</div>
@@ -143,24 +147,24 @@
         </div>
       </div>
       <ol class="sublist rise" id="ai-list">
-        <li><span class="n">2.1</span><b>Connect ChatGPT or Claude</b><span>Link an assistant to your calendar from Settings.</span></li>
-        <li><span class="n">2.2</span><b>Choose read, write, or delete</b><span>Scoped permissions decide what an assistant can do.</span></li>
-        <li><span class="n">2.3</span><b>Revoke anytime</b><span>Cut off any connection in one click.</span></li>
-        <li><span class="n">2.4</span><b>Full activity log</b><span>See what every assistant has done, in one place.</span></li>
+        <li><span class="n">2.1</span><div class="t"><b>Connect ChatGPT or Claude</b><p>Link an assistant to your calendar from Settings.</p></div></li>
+        <li><span class="n">2.2</span><div class="t"><b>Choose read, write, or delete</b><p>Scoped permissions decide what an assistant can do.</p></div></li>
+        <li><span class="n">2.3</span><div class="t"><b>Revoke anytime</b><p>Cut off any connection in one click.</p></div></li>
+        <li><span class="n">2.4</span><div class="t"><b>Full activity log</b><p>See what every assistant has done, in one place.</p></div></li>
       </ol>
     </div>
   </section>
 
-  <section data-tone="light">
+  <section id="themes" data-tone="light">
     <div class="wrap">
       <div class="sec-head rise">
         <p class="eyebrow">Themes</p>
         <h2 class="h2">Easy on the eyes, day or night.</h2>
-        <p class="lede">Daylight comes in Light and Dark.</p>
+        <p class="lede">Daylight comes in Light and Dark themes, so it stays comfortable from morning to midnight.</p>
       </div>
       <div class="stage rise">
         <div class="main">
-          <div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
             <div class="shot" style="--ar:4/3">
               <img src="assets/screenshots/theme-light.png" alt="Daylight in the light theme" width="1200" height="900" loading="lazy">
               <div class="ph"><b>Screenshot placeholder</b>Light theme · 1200 × 900</div>
@@ -168,7 +172,7 @@
           </div>
         </div>
         <div class="over">
-          <div class="frame on-dark"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="frame on-dark"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url" data-url></span></div>
             <div class="shot" style="--ar:4/3">
               <img src="assets/screenshots/theme-dark.png" alt="Daylight in the dark theme" width="1200" height="900" loading="lazy">
               <div class="ph"><b>Screenshot placeholder</b>Dark theme · 1200 × 900</div>
@@ -191,12 +195,12 @@
         <h2 class="h2">Questions, answered.</h2>
       </div>
       <div class="faq rise">
-        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a1" id="q1">Is it free?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a1" role="region" aria-labelledby="q1"><div><p>Yes. Daylight is free, with no subscriptions and no in-app purchases.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a2" id="q2">Do I need to install anything?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a2" role="region" aria-labelledby="q2"><div><p>No. Daylight runs in your browser, so there is nothing to download.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a3" id="q3">Can I import my calendars?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a3" role="region" aria-labelledby="q3"><div><p>Yes. Subscribe by iCal link or import an ICS file. A US Holidays calendar is built in.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a4" id="q4">Can I share with people?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a4" role="region" aria-labelledby="q4"><div><p>Yes. Share calendars or single events with other Daylight accounts as view-only or can-edit, or share with a public link.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a5" id="q5">Does it work with AI assistants?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a5" role="region" aria-labelledby="q5"><div><p>Yes. Connect ChatGPT or Claude with scoped, revocable permissions and a full activity log.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a6" id="q6">Who made it?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a6" role="region" aria-labelledby="q6"><div><p>An independent developer. Daylight is designed and built by Joey.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a1" id="q1">Is it free?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a1" role="region" aria-labelledby="q1"><div><p>Yes — Daylight is free, with no subscriptions and no in-app purchases.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a2" id="q2">Do I need to install anything?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a2" role="region" aria-labelledby="q2"><div><p>No — it runs in your browser.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a3" id="q3">Can I import my calendars?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a3" role="region" aria-labelledby="q3"><div><p>Yes — subscribe by iCal link or import an ICS file; a US Holidays calendar is built in.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a4" id="q4">Can I share with people?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a4" role="region" aria-labelledby="q4"><div><p>Yes — share calendars or single events with other Daylight accounts (view-only or can-edit), or with a public link.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a5" id="q5">Does it work with AI assistants?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a5" role="region" aria-labelledby="q5"><div><p>Yes — connect ChatGPT or Claude with scoped, revocable permissions and a full activity log.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="a6" id="q6">Who made it?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="a6" role="region" aria-labelledby="q6"><div><p>An independent developer — designed and built by Joey.</p></div></div></div>
       </div>
     </div>
   </section>
@@ -216,15 +220,18 @@
 <footer class="footer" data-tone="dark">
   <div class="wrap">
     <div class="f-top">
-      <a class="brand" href="./" aria-label="Daylight home"><img src="assets/logo-white.svg" alt="" width="28" height="28"><span>Daylight</span></a>
-      <div class="f-cols">
-        <div><h4>Product</h4><ul><li><a data-app>Open Daylight</a></li><li><a href="#features">Features</a></li><li><a href="#ai">AI access</a></li></ul></div>
-        <div><h4>Legal</h4><ul><li><a href="privacy/">Privacy</a></li><li><a href="tos/">Terms</a></li></ul></div>
+      <div class="f-brand">
+        <a class="brand" href="./" aria-label="Daylight home"><img src="assets/logo-white.svg" alt="" width="36" height="36"><span>Daylight</span></a>
+        <p>A clean, fast web calendar for your events and tasks. Free.</p>
       </div>
+      <div class="f-cols"><div><h4>Product</h4><ul><li><a data-app>Open Daylight</a></li><li><a href="#features">Features</a></li><li><a href="#ai">AI access</a></li></ul></div>
+      <div><h4>Daylight</h4><ul><li><a href="#sharing">Sharing</a></li><li><a href="#themes">Themes</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="privacy/">Privacy</a></li><li><a href="tos/">Terms</a></li></ul></div></div>
     </div>
     <div class="f-bottom"><span>Designed and built by Joey.</span><span>© <span id="year">2026</span> Daylight</span></div>
   </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
