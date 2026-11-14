@@ -1,4 +1,4 @@
-# Daylight website design system (v2)
+# Daylight website design system (v3)
 
 Direction: calm, precise, strictly black and white. Pacing and type discipline from Cron (huge tight headline, app frame overlapping a dark hero), Vercel (hairlines, tiny uppercase labels, medium-weight grotesque) and Linear (dark glass hero, arrowed CTA, footer as its own slab). The skin is Daylight's own. All tokens live as CSS variables at the top of `styles.css`; pages use names, never raw values.
 
@@ -17,6 +17,24 @@ Direction: calm, precise, strictly black and white. Pacing and type discipline f
 | `--accent` / `--accent-dk` | #1a73e8 / #8ab4f8 | the app's own link and focus accent only (focus rings, link underlines) |
 
 No other color. Depth comes from weight, size, spacing, hairlines, soft white glows and glass on dark.
+
+## System themes (light + dark)
+Every page follows the visitor's OS theme through `prefers-color-scheme` in CSS only: no script, so no flash of the wrong theme, and it flips live when the OS flips. `color-scheme: light dark` and per-scheme `theme-color` metas are set on every page. The hero, AI access and final CTA stay dark in both themes.
+
+| Token | Light | Dark |
+|---|---|---|
+| `--bg` | #fff | #0b0b0b |
+| `--bg-alt` | #f5f5f5 | #111 |
+| `--card` | #fff | #141414 |
+| `--ink` / `-2` / `-3` | #0a0a0a / #444 / #6b6b6b | #fafafa / #b3b3b3 / #8f8f8f |
+| `--line` / `--line-2` | #e5e5e5 / #d0d0d0 | rgba(255,255,255,.09) / .18 |
+| `--accent` | #1a73e8 | #8ab4f8 |
+| `--on-ink` | #fff | #0a0a0a (text on inked surfaces: icon tiles, check marks) |
+| `--btn-bg` / `--btn-fg` / `--btn-hover` | #0a0a0a / #fff / #262626 | #fff / #0a0a0a / #e6e6e6 |
+| `--dk` (dark sections) | #0a0a0a | #050505 |
+| `--sh1` / `--sh2` | soft drop shadows | hairline inset + deep shadow |
+
+Dark theme details: cards are dark grey with hairline borders (Linear style), glows on the AI and CTA sections are stronger, the nav goes dark glass over every section, and the logo swaps (white mark on dark, black on light) in the nav and footer on every page. Product placeholder frames keep their own pinned light/dark values in both themes.
 
 ## Typography
 Inter only (400, 500, 600, 700, 800), loaded from Google Fonts with a system fallback stack.
