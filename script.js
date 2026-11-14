@@ -25,3 +25,8 @@
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Open menu'); menu.classList.remove('is-open'); }));
   const theme = matchMedia('(prefers-color-scheme:dark)'); theme.addEventListener?.('change', e => { document.documentElement.dataset.theme = e.matches ? 'dark' : 'light'; });
 })();
+document.querySelectorAll('.reveal').forEach((el) => {
+  if (matchMedia('(prefers-reduced-motion:reduce)').matches) { el.classList.add('is-visible'); return; }
+  const observer = new IntersectionObserver((entries, obs) => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); } }), { threshold: .14 });
+  observer.observe(el);
+});
