@@ -107,7 +107,8 @@ button{font:inherit;color:inherit}
 /* ---------- product visuals: real screenshot when present, abstract schematic with a label when not ---------- */
 .shot{position:relative;display:block;overflow:hidden;background:var(--bg)}
 .shot .sk,.shot img{position:absolute;inset:0;width:100%;height:100%}
-.shot img{object-fit:cover;object-position:left top}
+.shot picture{display:contents}
+.shot img{object-fit:cover;object-position:var(--px,50%) var(--py,50%);transform:scale(var(--z,1));transform-origin:var(--px,50%) var(--py,50%)}
 .sk .g{fill:none;stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke}
 .sk .b{fill:var(--ghost)}
 .sk .f{fill:var(--line)}

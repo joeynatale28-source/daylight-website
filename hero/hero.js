@@ -70,18 +70,6 @@
     }, 2600);
   }
 
-  /* Real screenshots: when <html data-shots="on">, each visual loads its file and replaces the schematic.
-     A file that fails to load leaves the schematic and its label in place, never an empty box. */
-  if (root.getAttribute('data-shots') === 'on') {
-    [].forEach.call(d.querySelectorAll('[data-shot]'), function (box) {
-      var img = new Image();
-      img.alt = (box.getAttribute('aria-label') || '').replace(' \u2014 screenshot goes here', '');
-      img.decoding = 'async';
-      img.onload = function () { box.appendChild(img); box.classList.add('has-shot'); };
-      img.src = 'assets/screenshots/' + box.getAttribute('data-shot');
-    });
-  }
-
   /* Accordions. Without this script every row stays expanded. Toggling never scrolls the page. */
   [].forEach.call(d.querySelectorAll('[data-acc]'), function (rootEl) {
     var keepOne = rootEl.getAttribute('data-acc') === 'one';
