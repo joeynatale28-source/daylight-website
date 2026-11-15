@@ -1,0 +1,133 @@
+/* Daylight — sections below the hero, footer, and the legal page layout. Uses the tokens from hero.css.
+   Everything here is visible by default; scroll reveals are added by hero.js and never hide content in CSS. */
+:root{--foot-bg:#ffffff;--shadow:0 14px 44px rgba(0,0,0,.08);--c-blue:#4f86f7;--c-green:#3fa672;--c-amber:#e0a33a;--c-red:#e0564f;--claude:#d97757;--gemini:#4796e3}
+@media (prefers-color-scheme:dark){:root{--foot-bg:#000000;--shadow:0 16px 48px rgba(0,0,0,.45)}}
+.t-light{--bg:#ffffff;--surface:#f5f5f5;--card:#ffffff;--text:#171717;--muted:#737373;--line:#e5e5e5;--ghost:#d4d4d4}
+.t-dark{--bg:#121212;--surface:#282828;--card:#1e1e1e;--text:#e0e0e0;--muted:#a0a0a0;--line:#2c2c2c;--ghost:#333333}
+
+ul,ol{margin:0;padding:0;list-style:none}
+.sec{padding:120px 0;scroll-margin-top:72px}
+.sec-head{display:grid;justify-items:center;gap:16px;text-align:center;margin-bottom:56px}
+.sec h2{font-size:clamp(32px,4vw,48px);font-weight:700;letter-spacing:-0.03em;line-height:1.08;text-wrap:balance}
+.sec h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;line-height:1.3}
+.sec-sub{color:var(--muted);font-size:17px;max-width:60ch;text-wrap:balance}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.eyebrow svg{width:15px;height:15px}
+
+/* labeled placeholder frame: the only kind of product visual on the page */
+.ph{position:relative;display:grid;place-items:center;padding:36px 16px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--muted);font-size:13px;line-height:1.4;text-align:center;transition:background-color 200ms linear,border-color 200ms linear,color 200ms linear}
+.pop{position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:6px}
+.pop i{width:8px;height:8px;border-radius:50%}
+.pop i.bar{width:30px;height:6px;border-radius:999px}
+.c-blue{background:var(--c-blue)}.c-green{background:var(--c-green)}.c-amber{background:var(--c-amber)}.c-red{background:var(--c-red)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:28px;transition:background-color 200ms linear,border-color 200ms linear,translate 200ms var(--ease)}
+.lift:hover{translate:0 -1px;border-color:var(--ghost)}
+.lift:active{scale:.98}
+
+/* 1. features: three cards fanned like a hand of cards */
+.fan{display:flex;justify-content:center;align-items:flex-start;padding:28px 0 36px}
+.fc{width:min(352px,35%);padding:16px 16px 26px;box-shadow:var(--shadow)}
+.fc+.fc{margin-left:-14px}
+.fc:nth-child(1){transform:translateY(24px) rotate(-4deg)}
+.fc:nth-child(2){transform:translateY(-10px);z-index:2}
+.fc:nth-child(3){transform:translateY(24px) rotate(4deg)}
+.fc .ph{aspect-ratio:4/3;border-radius:16px}
+.fc h3{margin:22px 14px 8px}
+.fc p{margin:0 14px;color:var(--muted);font-size:16px;line-height:1.55}
+
+/* 2. views: four equal columns */
+.cols4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.col .ph{aspect-ratio:3/4}
+.col h3{margin:20px 4px 6px}
+.col p{margin:0 4px;color:var(--muted);font-size:15px;line-height:1.5}
+
+/* 3. AI access: split, then steps */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.split h2{margin-bottom:36px}
+.ai-list{border-top:1px solid var(--line)}
+.ai-row{border-bottom:1px solid var(--line)}
+.ai-head{display:flex;align-items:center;gap:14px;width:100%;min-height:68px;padding:0;border:0;background:none;color:var(--text);font:600 19px/1.2 Inter,system-ui,sans-serif;letter-spacing:-0.01em;text-align:left;cursor:default}
+.js-acc .ai-head,.js-acc .faq-q{cursor:pointer}
+.ai-logo{width:24px;height:24px;flex:none}
+.logo-claude{color:var(--claude)}
+.logo-gemini{color:var(--gemini)}
+.acc-body{display:grid;grid-template-rows:1fr;transition:grid-template-rows 300ms var(--ease)}
+.acc-body>div{overflow:hidden;min-height:0}
+.js-acc .acc-item:not(.open) .acc-body{grid-template-rows:0fr}
+.ai-row .acc-body p{padding:0 0 22px 38px;color:var(--muted)}
+.ai-panel{aspect-ratio:1/1;border-radius:28px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:72px}
+.step{padding:26px}
+.step .num{display:grid;place-items:center;width:32px;height:32px;margin-bottom:18px;border-radius:50%;background:var(--surface);font-size:13px;font-weight:600}
+.step p{color:var(--muted);font-size:16px;line-height:1.55}
+.step b{color:var(--text);font-weight:600}
+.assure{margin-top:36px;text-align:center;color:var(--muted);font-size:15px}
+
+/* 4. sharing and 5. themes */
+.wide{aspect-ratio:16/7;border-radius:28px}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pair .ph{aspect-ratio:4/3;border-radius:28px;background:var(--bg);border-color:var(--ghost)}
+.pair p{margin-top:16px;text-align:center;font-size:15px;font-weight:600}
+
+/* 6. small details: text only */
+.details{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px;border-top:1px solid var(--line)}
+.details li{padding:22px 0;border-bottom:1px solid var(--line)}
+.details b{display:block;margin-bottom:4px;font-size:16px;font-weight:700}
+.details span{color:var(--muted);font-size:15px;line-height:1.5}
+
+/* 7. FAQ */
+.faq{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;min-height:72px;padding:14px 0;border:0;background:none;color:var(--text);font:600 18px/1.35 Inter,system-ui,sans-serif;letter-spacing:-0.01em;text-align:left;cursor:default}
+.faq-q::after{content:"";flex:none;width:9px;height:9px;margin:0 6px 4px 0;border-right:1.75px solid currentColor;border-bottom:1.75px solid currentColor;transform:rotate(45deg);transition:transform 250ms var(--ease);display:none}
+.js-acc .faq-q::after{display:block}
+.js-acc .open .faq-q::after{transform:rotate(-135deg) translate(-3px,-3px)}
+.faq-item .acc-body p{padding:0 40px 26px 0;color:var(--muted)}
+
+/* 8. final CTA */
+.cta{text-align:center}
+.cta h2{margin-bottom:36px}
+
+/* 9. footer: white in light, black in dark */
+.foot{background:var(--foot-bg);border-top:1px solid var(--line);padding:72px 0 0;transition:background-color 200ms linear,border-color 200ms linear}
+.foot-top{display:grid;grid-template-columns:1.7fr repeat(3,1fr);gap:40px;padding-bottom:64px}
+.foot-tag{margin-top:12px;color:var(--muted);font-size:15px}
+.foot h3{margin-bottom:14px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.foot li{margin:10px 0;font-size:15px}
+.foot li a{color:var(--muted);transition:color 200ms linear}
+.foot li a:hover{color:var(--text)}
+.foot-bar{padding:22px 0 28px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+/* legal pages: one calm column */
+.legal{max-width:768px;margin:0 auto;padding:96px 24px 120px}
+.legal h1{font-size:var(--h1);font-weight:600;letter-spacing:-0.03em;line-height:1.08}
+.legal .eff{margin-top:20px;font-size:15px;color:var(--muted)}
+.legal .intro{margin:28px 0 56px;font-size:19px;line-height:1.55}
+.legal section{padding:32px 0;border-top:1px solid var(--line);scroll-margin-top:72px}
+.legal h2{margin-bottom:10px;font-size:22px;font-weight:600;letter-spacing:-0.02em;line-height:1.3}
+.legal section p{color:var(--muted)}
+
+@media (max-width:960px){
+  .sec{padding:88px 0}
+  .fan{display:grid;gap:20px;padding:0;max-width:520px;margin:0 auto}
+  .fc,.fc+.fc{width:auto;margin:0}
+  .fan .fc{transform:none}
+  .cols4{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}
+  .col .ph{aspect-ratio:4/3}
+  .split{grid-template-columns:minmax(0,1fr);gap:40px}
+  .ai-panel{aspect-ratio:16/10}
+  .steps{grid-template-columns:minmax(0,1fr);margin-top:48px}
+  .details{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-top{grid-template-columns:repeat(3,1fr);gap:36px 20px}
+  .foot-brand{grid-column:1/-1}
+}
+@media (max-width:600px){
+  .sec{padding:68px 0}
+  .sec-head{margin-bottom:40px}
+  .cols4,.pair,.details{grid-template-columns:minmax(0,1fr)}
+  .wide{aspect-ratio:4/3}
+  .legal{padding:64px 16px 88px}
+  .legal .intro{font-size:17px;margin-bottom:40px}
+  .faq-item .acc-body p{padding-right:8px}
+}
