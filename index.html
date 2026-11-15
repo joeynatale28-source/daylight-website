@@ -3,37 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Daylight — landing page variants</title>
+<title>Daylight: your calendar, minus the clutter</title>
+<meta name="description" content="Daylight is a free calendar that runs in your browser. Events, tasks and reminders in one calm, fast place.">
 <meta name="color-scheme" content="light dark">
-<meta name="robots" content="noindex">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Daylight: your calendar, minus the clutter">
+<meta property="og:description" content="The calendar for the things you actually do. Events, tasks and reminders in one calm, fast place.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<style>
-:root{--bg:#ffffff;--surface:#f5f5f5;--card:#ffffff;--text:#171717;--muted:#737373;--faint:#a3a3a3;--line:#e5e5e5;--ghost:#d4d4d4}
-@media (prefers-color-scheme:dark){:root{--bg:#121212;--surface:#282828;--card:#1e1e1e;--text:#e0e0e0;--muted:#a0a0a0;--faint:#757575;--line:#2c2c2c;--ghost:#333333}}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:32px 16px;background:var(--bg);color:var(--text);font:400 17px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;transition:background-color 200ms linear,color 200ms linear}
-main{width:100%;max-width:440px}
-.brand{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:28px;font-size:20px;font-weight:600;letter-spacing:-0.03em}
-.brand svg{height:15px;width:auto}
-ol{margin:0;padding:0;list-style:none;display:grid;gap:10px}
-a{display:flex;align-items:center;gap:14px;min-height:50px;padding:6px 22px 6px 8px;border-radius:999px;border:1px solid var(--ghost);color:inherit;text-decoration:none;font-size:15px;font-weight:600;transition:background-color 200ms linear,border-color 200ms linear}
-a:hover{background:var(--surface)}
-a:focus-visible{outline:2px solid var(--text);outline-offset:3px}
-b{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--text);color:var(--bg);font-weight:600}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="landing.css">
 </head>
 <body>
-<main>
-<div class="brand"><svg class="logo-mark" viewBox="36 170 426 188" aria-hidden="true"><path fill="currentColor" d="M100 326a149 149 0 0 1 298 0z"/><path fill="currentColor" d="M36 339h426v12H36z"/></svg><span>Daylight</span></div>
-<ol>
-<li><a href="1/"><b>1</b>Centered hero, two product windows</a></li>
-<li><a href="2/"><b>2</b>Split hero, floating product cards</a></li>
-<li><a href="3/"><b>3</b>Huge typography-led hero</a></li>
-<li><a href="4/"><b>4</b>Editorial, full-width scroll sections</a></li>
-<li><a href="5/"><b>5</b>Canvas bento grid, feature-led</a></li>
-</ol>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="36 170 426 188"><path fill="currentColor" d="M100 326a149 149 0 0 1 298 0z"/><path fill="currentColor" d="M36 339h426v12H36z"/></symbol><symbol id="chev" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
+
+<a class="banner" href="https://joeynatale28-source.github.io/daylight/login/">Daylight is free — open it in your browser <span aria-hidden="true">›</span></a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Daylight home"><svg class="mark"><use href="#mark"/></svg>Daylight</a>
+    <nav aria-label="Sections">
+      <a href="#features">Features</a><a href="#views">Views</a><a href="#ai">AI access</a><a href="#sharing">Sharing</a><a href="#themes">Themes</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-solid btn-sm" href="https://joeynatale28-source.github.io/daylight/login/">Open Daylight</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero wrap">
+  <h1>Your calendar,<br>minus the <span class="slot" id="slot"><span class="w on">clutter.</span><span class="w">noise.</span><span class="w">chaos.</span><span class="w">mess.</span></span></h1>
+  <p class="lede">The calendar for the things you actually do. Events, tasks and reminders in one calm, fast place.</p>
+  <div class="cta">
+    <a class="btn btn-solid" href="https://joeynatale28-source.github.io/daylight/login/">Open Daylight</a>
+    <a class="btn btn-line" href="#features">Explore features</a>
+  </div>
+  <p class="trust">Free. No install. Your data stays yours.</p>
+  <div class="win hero-win">
+    <div class="bar"><i></i><i></i><i></i><span class="url">Daylight</span></div>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="hero/assets/screenshots/theme-dark.png">
+      <img src="hero/assets/screenshots/month.png" width="1600" height="1000" alt="Daylight Month view with colored events across November 2026">
+    </picture>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="sec wrap" id="features">
+  <div class="head"><p class="eyebrow">Features</p><h2>Plan the day, not the tool</h2></div>
+  <div class="grid f-grid">
+    <article class="card c-events">
+      <div class="txt"><h3>Events</h3><p>Add anything in seconds — title, time, place, and a note. Repeating events let you change one day, this and following, or the whole series.</p></div>
+      <div class="win vis"><div class="crop" style="--cx:300;--cy:392;--cw:734;--ch:390"><img src="hero/assets/screenshots/event.png" alt="An event open in Daylight: Team practice, Sunday 6:00pm, Riverside Fields" loading="lazy"></div></div>
+    </article>
+    <article class="card c-tasks">
+      <div class="txt"><h3>Tasks</h3><p>Tasks live inside Daylight, not in another app. Add one, check it off, move on.</p></div>
+      <div class="win vis"><div class="crop" style="--cx:500;--cy:65;--cw:890;--ch:325"><img src="hero/assets/screenshots/tasks.png" alt="The Daylight task list with an Add a task field" loading="lazy"></div></div>
+    </article>
+    <article class="card c-rem">
+      <div class="txt"><h3>Reminders</h3><p>Set a default reminder for each calendar, so the important things never slip past. Reminders ride along with the event.</p></div>
+      <div class="win vis"><div class="crop" style="--cx:500;--cy:135;--cw:890;--ch:280"><img src="hero/assets/screenshots/agenda.png" alt="Daylight Agenda listing today's events" loading="lazy"></div></div>
+    </article>
+  </div>
+</section>
+
+<!-- VIEWS -->
+<section class="sec wrap" id="views">
+  <div class="head"><p class="eyebrow">Views</p><h2>See your week your way.</h2><p class="sub">Four ways to look at the same calendar. Pick the one that fits the moment.</p></div>
+  <div class="grid v-grid">
+    <article class="card"><div class="txt"><h3>Month</h3><p>The whole month at a glance — click a date to open that day.</p></div><div class="win vis"><div class="crop" style="--cx:300;--cy:0;--cw:1300;--ch:1000"><img src="hero/assets/screenshots/month.png" alt="Month view" loading="lazy"></div></div></article>
+    <article class="card"><div class="txt"><h3>Week</h3><p>Seven days, side by side, with room to breathe.</p></div><div class="win vis"><div class="crop" style="--cx:300;--cy:0;--cw:1300;--ch:1000"><img src="hero/assets/screenshots/week.png" alt="Week view" loading="lazy"></div></div></article>
+    <article class="card"><div class="txt"><h3>Day</h3><p>One day, hour by hour, all-day events on top.</p></div><div class="win vis"><div class="crop" style="--cx:300;--cy:0;--cw:1300;--ch:1000"><img src="hero/assets/screenshots/day.png" alt="Day view" loading="lazy"></div></div></article>
+    <article class="card"><div class="txt"><h3>Agenda</h3><p>What’s next, in a simple list.</p></div><div class="win vis"><div class="crop" style="--cx:300;--cy:0;--cw:1300;--ch:1000"><img src="hero/assets/screenshots/agenda.png" alt="Agenda view" loading="lazy"></div></div></article>
+  </div>
+</section>
+
+<!-- AI -->
+<section class="sec wrap" id="ai">
+  <div class="head"><p class="eyebrow">AI access</p><h2>Your AI can use your calendar</h2></div>
+  <div class="grid ai-grid">
+    <article class="card ai-vis">
+      <div class="win vis"><div class="crop" style="--cx:350;--cy:100;--cw:900;--ch:800"><img src="hero/assets/screenshots/ai-access.png" alt="Settings, AI access: Claude and ChatGPT connected, Gemini not connected, with Recent AI activity" loading="lazy"></div></div>
+    </article>
+    <article class="card ai-txt">
+      <div class="acc" data-acc>
+        <div class="row"><button aria-expanded="true"><span class="logo-chip"><span class="crop" style="--cx:648;--cy:315;--cw:42;--ch:42"><img src="hero/assets/screenshots/ai-access.png" alt=""></span></span>Claude<svg><use href="#chev"/></svg></button><div class="panel"><p>Ask Claude what’s on your day, or tell it to add an event.</p></div></div>
+        <div class="row"><button aria-expanded="false"><span class="logo-chip"><span class="crop" style="--cx:648;--cy:386;--cw:42;--ch:42"><img src="hero/assets/screenshots/ai-access.png" alt=""></span></span>ChatGPT<svg><use href="#chev"/></svg></button><div class="panel" hidden><p>Same for ChatGPT — your calendar, in conversation.</p></div></div>
+        <div class="row"><button aria-expanded="false"><span class="logo-chip"><span class="crop" style="--cx:648;--cy:446;--cw:42;--ch:42"><img src="hero/assets/screenshots/ai-access.png" alt=""></span></span>Gemini<svg><use href="#chev"/></svg></button><div class="panel" hidden><p>Gemini connects the same way.</p></div></div>
+      </div>
+      <ol class="steps">
+        <li><b>1</b><span>Connect — link Claude, ChatGPT, or Gemini over MCP from Settings → AI access.</span></li>
+        <li><b>2</b><span>Choose what it can do — read, write, or delete. Your call, changeable anytime.</span></li>
+        <li><b>3</b><span>Just ask — what’s on my day, move lunch to 1, add a dentist appointment.</span></li>
+      </ol>
+      <p class="note">Daylight connects to your AI over MCP (Model Context Protocol) — one standard link for Claude, ChatGPT, and Gemini. Every action shows up in Recent AI activity. Disconnect anytime.</p>
+    </article>
+  </div>
+</section>
+
+<!-- SHARING -->
+<section class="sec wrap" id="sharing">
+  <div class="grid sh-grid">
+    <article class="card sh-txt">
+      <p class="eyebrow">Sharing</p>
+      <h2>Share the plan, not your whole life</h2>
+      <p class="sub">Share a whole calendar with family, or a single event with anyone. They see what you share — nothing else.</p>
+      <a class="btn btn-line" href="https://joeynatale28-source.github.io/daylight/login/">Open Daylight</a>
+    </article>
+    <article class="card sh-vis"><div class="win vis"><div class="crop" style="--cx:520;--cy:80;--cw:560;--ch:840"><img src="hero/assets/screenshots/sharing.png" alt="Sharing the Everyday calendar, with View only and Can edit permissions per person" loading="lazy"></div></div></article>
+  </div>
+</section>
+
+<!-- THEMES -->
+<section class="sec wrap" id="themes">
+  <div class="head"><p class="eyebrow">Themes</p><h2>Everything in your control</h2><p class="sub">Light or dark, following your system. Daylight looks right either way.</p></div>
+  <div class="grid t-grid">
+    <article class="card"><div class="win vis"><div class="bar"><i></i><i></i><i></i></div><img src="hero/assets/screenshots/theme-light.png" width="1600" height="1000" alt="Daylight in light mode" loading="lazy"></div><p class="cap">Light</p></article>
+    <article class="card"><div class="win vis"><div class="bar"><i></i><i></i><i></i></div><img src="hero/assets/screenshots/theme-dark.png" width="1600" height="1000" alt="Daylight in dark mode" loading="lazy"></div><p class="cap">Dark</p></article>
+  </div>
+</section>
+
+<!-- SMALL DETAILS -->
+<section class="sec wrap" id="details">
+  <div class="head"><p class="eyebrow">Details</p><h2>Small details, done right</h2></div>
+  <div class="d-grid">
+    <ul class="chips">
+      <li class="card"><b>Search</b><span>Find any event in seconds.</span></li>
+      <li class="card"><b>Drag and drop</b><span>Drag an event to move it.</span></li>
+      <li class="card"><b>Undo</b><span>Bring back something you deleted by mistake.</span></li>
+      <li class="card"><b>Duplicate</b><span>Duplicate an event instead of retyping it.</span></li>
+      <li class="card"><b>Multi-day events</b><span>Long events show as one bar across the days.</span></li>
+      <li class="card"><b>Calendars</b><span>As many calendars as you need, each with its own color.</span></li>
+      <li class="card"><b>Subscriptions</b><span>Add any calendar with an iCal link or an ICS file.</span></li>
+      <li class="card"><b>US holidays</b><span>US holidays built in, through 2030.</span></li>
+      <li class="card"><b>Places</b><span>Search for a place when you add a location.</span></li>
+      <li class="card"><b>Notifications</b><span>Notifications for shares and updates, right in the app.</span></li>
+      <li class="card"><b>Sign-in</b><span>Sign in with email, Google, or a passkey.</span></li>
+      <li class="card"><b>Birthdays</b><span>Birthdays show the age they’ll turn.</span></li>
+      <li class="card"><b>Time</b><span>12-hour or 24-hour time, your choice.</span></li>
+      <li class="card"><b>Shortcuts</b><span>Keyboard shortcuts for the things you do most.</span></li>
+      <li class="card d-vis"><div class="win vis"><div class="crop" style="--cx:300;--cy:390;--cw:1285;--ch:305"><img src="hero/assets/screenshots/month.png" alt="Multi-day events as continuous bars: Lake trip and Grandma visiting" loading="lazy"></div></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SELLING POINT -->
+<section class="sec wrap" id="why">
+  <div class="sell">
+    <h2>Everything you plan, in one calm place. Free.</h2>
+    <ul>
+      <li><b>Free.</b><span>No trial, no card. Everything on this page is yours.</span></li>
+      <li><b>No install.</b><span>Runs in your browser, on a computer or a phone.</span></li>
+      <li><b>Your data stays yours.</b><span>Only you see it, unless you choose to share.</span></li>
+      <li><b>AI access.</b><span>Connect Claude, ChatGPT, or Gemini. You choose read, write, or delete.</span></li>
+    </ul>
+    <a class="btn btn-invert" href="https://joeynatale28-source.github.io/daylight/login/">Open Daylight</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec wrap" id="faq">
+  <div class="head"><p class="eyebrow">FAQ</p><h2>Questions, answered</h2></div>
+  <div class="card faq acc" data-acc>
+    <div class="row"><button aria-expanded="true">Is Daylight free?<svg><use href="#chev"/></svg></button><div class="panel"><p>Yes. Daylight is free to use, with no trial and no card needed. Create an account and everything on this page is yours.</p></div></div>
+    <div class="row"><button aria-expanded="false">Do I need to install anything?<svg><use href="#chev"/></svg></button><div class="panel" hidden><p>No. Daylight runs in your browser, on a computer or a phone, so there is nothing to download or update. Open it, sign in, and your calendar is there.</p></div></div>
+    <div class="row"><button aria-expanded="false">Who can see my calendars and tasks?<svg><use href="#chev"/></svg></button><div class="panel" hidden><p>Only you, unless you choose to share a calendar or an event. Everything is saved to your own Daylight account, and when you do share, you pick what each person can do and can stop sharing at any time.</p></div></div>
+    <div class="row"><button aria-expanded="false">How do I sign in?<svg><use href="#chev"/></svg></button><div class="panel" hidden><p>With an email and password, with Google, or with a passkey. You can add or change a sign-in method later in Settings.</p></div></div>
+    <div class="row"><button aria-expanded="false">How does AI access work?<svg><use href="#chev"/></svg></button><div class="panel" hidden><p>In Settings, open AI access and connect Claude, ChatGPT or Gemini over MCP with the link shown there, then pick what it may do: read, write or delete. You can disconnect it at any time.</p></div></div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="sec wrap close">
+  <h2>Less clutter. More daylight.</h2>
+  <a class="btn btn-solid" href="https://joeynatale28-source.github.io/daylight/login/">Open Daylight</a>
+</section>
 </main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div class="fbrand"><a class="logo" href="#top"><svg class="mark"><use href="#mark"/></svg>Daylight</a><p>Your calendar, minus the clutter.</p></div>
+      <div><h4>Product</h4><a href="https://joeynatale28-source.github.io/daylight/login/">Open Daylight</a><a href="#features">Features</a><a href="#ai">AI access</a></div>
+      <div><h4>Explore</h4><a href="#sharing">Sharing</a><a href="#themes">Themes</a><a href="#faq">FAQ</a></div>
+      <div><h4>Legal</h4><a href="privacy/">Privacy</a><a href="tos/">Terms</a></div>
+    </div>
+    <div class="base"><span>© 2026 Daylight. All rights reserved.</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+<script src="landing.js"></script>
 </body>
 </html>
